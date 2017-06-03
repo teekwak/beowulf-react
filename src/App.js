@@ -6,10 +6,6 @@ import StatusCheckerContainer from './containers/StatusCheckerContainer';
  * Entry point
  */
 class App extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>
