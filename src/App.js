@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Counter from './components/Counter';
 import NavigationBar from './components/NavigationBar';
 import StatusCheckerContainer from './containers/StatusCheckerContainer';
@@ -27,15 +27,9 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          {/* this should be the NavigationBar component */}
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/counter">Counter</Link></li>
-            <li><Link to="/status">Status</Link></li>
-          </ul>
+          <NavigationBar />
 
-          {/* leave this here */}
+          {/* renders component based on path */}
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/counter" component={Counter}/>
