@@ -1,9 +1,11 @@
 const express = require('express');
+const compression = require('compression');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
-const app = express();
 
+const app = express();
+app.use(compression());
 const compiler = webpack(webpackConfig);
 
 app.use(express.static(__dirname + '/www'));
