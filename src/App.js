@@ -17,6 +17,12 @@ const About = () => (
   </div>
 );
 
+const NotFound = () => (
+  <div>
+    <h2>NotFound</h2>
+  </div>
+);
+
 /**
  * Entry point
  * Note: all routing happens here and NOT by Express
@@ -25,19 +31,16 @@ const About = () => (
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <div>
-          <NavigationBar />
-
-          {/* renders component based on path */}
-          <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/counter" component={Counter}/>
-          <Route path="/status" component={StatusCheckerContainer}/>
-        </div>
-      </Router>
+      <div>
+        Hello world
+      </div>
     );
   }
 }
+
+App.Home = Home;
+App.About = About;
+App.NotFound = NotFound;
+
 export default App;
 

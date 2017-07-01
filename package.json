@@ -13,7 +13,6 @@
   "dependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
-    "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
     "compression": "^1.6.2",
@@ -23,8 +22,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
-    "webpack": "^2.6.1",
-    "webpack-dev-middleware": "^1.10.2"
+    "webpack": "^2.6.1"
   },
   "devDependencies": {
     "css-loader": "^0.28.4",
