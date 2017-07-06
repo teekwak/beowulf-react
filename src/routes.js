@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import App from './App';
 import NotFound from './NotFound';
-import StatusCheckerContainer from './containers/StatusCheckerContainer';
+import StatusCheckerContainer from './features/status/StatusCheckerContainer';
 
 const Routes = () => (
   <BrowserRouter>
