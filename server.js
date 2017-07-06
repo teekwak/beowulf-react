@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/www'));
 app.get('*', (req, res) => {
   console.log("rendered on server");
   res.sendFile('index.html', { root: path.join(__dirname, './www') });
+  res.flush();
 });
 
 const server = app.listen(3000, 'localhost', function() {
