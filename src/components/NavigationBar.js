@@ -1,14 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-/**
- * A counter button: tap the button to increase the count.
- */
 class NavigationBar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      count: 0,
+      highlighted: this.props.highlighted,
     };
   }
 
@@ -18,20 +16,12 @@ class NavigationBar extends React.Component {
         <nav className="navbar navbar-default">
           <div className="container">
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
               <Link to="/" className="navbar-brand">SDCL Beowulf</Link>
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav">
-                <li className="active"><Link to="/">Home</Link></li>
-                <li><Link to="/counter">Counter</Link></li>
-                <li><Link to="/status">Status</Link></li>
-                <li><Link to="/about">About</Link></li>
+                <li className={this.props.highlighted == "home" ? "active" : ""}><Link to="/">Home</Link></li>
+                <li className={this.props.highlighted == "status" ? "active" : ""}><Link to="/status">Status</Link></li>
               </ul>
             </div>
           </div>
@@ -40,4 +30,13 @@ class NavigationBar extends React.Component {
     );
   }
 }
+
+NavigationBar.defaultProps = {
+  highlighted: "",
+};
+
+NavigationBar.propTypes = {
+  highlighted: PropTypes.string,
+}
+
 export default NavigationBar;
